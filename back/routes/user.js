@@ -35,7 +35,7 @@ router.get('/', async (req, res, next) => { // GET /user
     }
   } catch (error) {
     console.error(error);
-   next(error);
+    next(error);
   }
 });
 
