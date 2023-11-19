@@ -9,7 +9,6 @@
   "author": "Joony",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.710.0",
     "bcrypt": "^5.0.0",
     "busboy": "^1.6.0",
     "cookie-parser": "^1.4.5",
@@ -22,7 +21,6 @@
     "hpp": "^0.2.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
-    "multer-s3": "^2.9.0",
     "mysql2": "^2.3.3",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
