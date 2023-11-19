@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { PlusOutlined } from '@ant-design/icons';
 
 import ImagesZoom from './ImagesZoom';
-import { backUrl } from '../config/config';
 
 const PostImages = ({ images }) => {
   const [showImagesZoom, setShowImagesZoom] = useState(false);
@@ -20,7 +19,7 @@ const PostImages = ({ images }) => {
       ret[index] = ret[index].replace('thumb', 'original');
       return ret;
     });
-  }
+  };
 
   if (images.length === 1) {
     return (
@@ -60,8 +59,8 @@ const PostImages = ({ images }) => {
 };
 
 PostImages.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   images: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default PostImages;
-
