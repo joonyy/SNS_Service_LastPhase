@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(hpp());
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors({
-    origin: 'http://nodebird.com',
+    origin: 'http://localhost:3060',
     credentials: true,
   }));
 } else {
@@ -48,11 +48,6 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   secret: process.env.COOKIE_SECRET,
-  cookie: {
-    httpOnly: true,
-    secure: false,
-    domain: process.env.NODE_ENV === 'production' && '.nodebird.com'
-  },
 }));
 app.use(passport.initialize());
 app.use(passport.session());

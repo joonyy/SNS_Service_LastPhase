@@ -169,8 +169,8 @@ function* logIn(action) {
   }
 }
 
-function logOutAPI() {
-  return axios.post('/user/logout');
+function logOutAPI(data) {
+  return axios.post('/user/logout', data);
 }
 
 function* logOut() {
