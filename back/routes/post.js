@@ -42,10 +42,10 @@ router.post('/', isLoggedIn, upload.none(), async (req, res, next) => { // POST 
       await post.addHashtags(result.map((v) => v[0]));
     }
     if (req.body.image) {
-      if (Array.isArray(req.body.image)) { // 이미지를 여러 개 올리면 image: [제로초.png, 부기초.png]
+      if (Array.isArray(req.body.image)) {
         const images = await Promise.all(req.body.image.map((image) => Image.create({ src: image })));
         await post.addImages(images);
-      } else { // 이미지를 하나만 올리면 image: 제로초.png
+      } else { 
         const image = await Image.create({ src: req.body.image });
         await post.addImages(image);
       }
@@ -76,12 +76,12 @@ router.post('/', isLoggedIn, upload.none(), async (req, res, next) => { // POST 
   }
 });
 
-router.post('/images', isLoggedIn, upload.array('image'), (req, res, next) => { // POST /post/images
+router.post('/images', isLoggedIn, upload.array('image'), (req, res, next) => {
   console.log(req.files);
   res.json(req.files.map((v) => v.filename));
 });
 
-router.get('/:postId', async (req, res, next) => { // GET /post/1
+router.get('/:postId', async (req, res, next) => {
   try {
     const post = await Post.findOne({
       where: { id: req.params.postId },
