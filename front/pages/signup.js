@@ -56,6 +56,7 @@ const Signup = () => {
     setTermError(false);
   }, []);
 
+  // eslint-disable-next-line consistent-return
   const onSubmit = useCallback(() => {
     if (password !== passwordCheck) {
       return setPasswordError(true);
