@@ -211,13 +211,10 @@ router.post('/', isNotLoggedIn, async (req, res, next) => { // POST /user/
 });
 
 router.post('/logout', isLoggedIn, (req, res) => {
-  req.logout(err =>{
-    if(err){
-      return next(err);
-    }
+  req.logout(()=>{
+    res.redirect('/');
+    req.session.destroy();
   });
-  req.session.destroy();
-  res.send('ok');
 });
 
 router.patch('/nickname', isLoggedIn, async (req, res, next) => {
