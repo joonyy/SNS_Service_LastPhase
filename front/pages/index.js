@@ -17,6 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     if (retweetError) {
+      // eslint-disable-next-line no-alert
       alert(retweetError);
     }
   }, [retweetError]);
