@@ -1,1 +1,2 @@
-export const backUrl = process.env.NODE_ENV === 'production' ? 'http://api.nodebird.com' : 'http://localhost:3065';
+/* eslint-disable import/prefer-default-export */
+export const backUrl = 'http://10.0.2.15';
