@@ -1,4 +1,7 @@
-node_modules/
-.next/
-uploads/
+
+.serverless
+/front/build/
+react-nodebird.pem
+node_modules
 .env
+.next
